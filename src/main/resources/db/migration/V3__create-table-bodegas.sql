@@ -1,5 +1,5 @@
 CREATE TABLE bodegas (
-                         id INT AUTO_INCREMENT,
+                         id BIGINT AUTO_INCREMENT,
                          nombre VARCHAR(255) NOT NULL,
                          direccion VARCHAR(255) NOT NULL,
                          ciudad VARCHAR(100) NOT NULL,
@@ -18,4 +18,4 @@ CREATE TABLE bodegas (
                          primary key(id)
 
 
-);
+)ENGINE=InnoDB;

@@ -11,4 +11,4 @@ create table clientes(
 
                 primary key(id)
 
-);
+)ENGINE=InnoDB;

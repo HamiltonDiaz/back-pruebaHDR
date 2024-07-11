@@ -1,11 +1,11 @@
 package com.backend.backend.domain.producto;
 
 import com.backend.backend.domain.base.Base;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.Table;
+import com.backend.backend.domain.pedido.Pedido;
+import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.List;
 
 @Table(name = "productos")
 @Entity(name = "producto")
@@ -21,4 +21,7 @@ public class Producto extends Base {
     private String descripcion;
     @Enumerated(EnumType.STRING)
     private CategoriaProducto categoriaProducto;
+
+    @OneToMany(mappedBy = "producto", cascade = CascadeType.ALL)
+    private List<Pedido> pedido;
 }

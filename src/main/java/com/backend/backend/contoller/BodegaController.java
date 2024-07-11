@@ -21,7 +21,7 @@ public class BodegaController {
 
     @PostMapping
     public ResponseEntity <RespuestaBodegaDTO> addBodega(@RequestBody @Valid BodegaDTO bodegaDTO,
-                                                           UriComponentsBuilder uriBuilder) {
+                                                         UriComponentsBuilder uriBuilder) {
         Bodega bodega = service.createBodega(bodegaDTO);
         RespuestaBodegaDTO respuestaBodegaDTO = new RespuestaBodegaDTO(bodega);
         URI url= uriBuilder.path("/api/v1/bodegas/{id}").buildAndExpand(bodega.getId()).toUri();

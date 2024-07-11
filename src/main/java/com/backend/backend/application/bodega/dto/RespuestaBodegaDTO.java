@@ -1,8 +1,6 @@
 package com.backend.backend.application.bodega.dto;
 
 import com.backend.backend.domain.bodega.Bodega;
-import com.backend.backend.domain.bodega.TipoBodega;
-import com.backend.backend.domain.cliente.Cliente;
 
 import java.math.BigDecimal;
 

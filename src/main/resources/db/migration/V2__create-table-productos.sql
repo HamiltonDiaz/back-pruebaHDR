@@ -9,4 +9,4 @@ create table productos(
 
                 primary key(id)
 
-);
+)ENGINE=InnoDB;
