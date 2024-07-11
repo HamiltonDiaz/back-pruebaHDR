@@ -13,7 +13,7 @@ public record ClienteDTO(
         String nombre,
 
         @NotBlank (message = "Correo requerido")
-        @Email(message = "El formato del correo electrónico no es válido")
+        @Email(message = "Formato de correo electrónico incorrecto")
         String email,
         @NotNull (message = "Tipo de documento es requerido")
         TipoDocumento tipoDocumento,
@@ -25,5 +25,5 @@ public record ClienteDTO(
         Boolean activo,
         LocalDate fechaDeCreacion,
         LocalDate fechaDeModificacion
-        ) {
+) {
 }

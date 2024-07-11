@@ -1,7 +1,6 @@
 package com.backend.backend.application.cliente.dto;
 
 import com.backend.backend.domain.cliente.Cliente;
-import com.backend.backend.domain.cliente.TipoDocumento;
 
 
 public record RespuestaClienteDTO(
