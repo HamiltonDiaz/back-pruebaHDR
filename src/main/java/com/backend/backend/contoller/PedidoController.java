@@ -33,6 +33,11 @@ public class PedidoController {
         Pedido pedido = service.getPedido(id);
         return ResponseEntity.ok(new RespuestaPedidoDTO(pedido));
     }
+    @GetMapping("/guia/{guia}")
+    public ResponseEntity<RespuestaPedidoDTO> findPedidoPorNumeroDeGuia(@PathVariable String guia) {
+        Pedido pedido = service.findPedidoPorNumeroDeGuia(guia);
+        return ResponseEntity.ok(new RespuestaPedidoDTO(pedido));
+    }
 
 
 }

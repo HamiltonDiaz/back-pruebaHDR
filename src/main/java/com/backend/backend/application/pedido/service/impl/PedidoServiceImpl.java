@@ -59,9 +59,7 @@ public class PedidoServiceImpl implements IPedidoService {
         Producto producto= productoRepository.getReferenceById(pedidoDTO.idProducto());
         Cliente cliente = clienteRepository.getReferenceById(pedidoDTO.idCliente());
         Bodega bodega= bodegaRepository.getReferenceById(pedidoDTO.idBodega());
-
         Pedido savePedido = PedidoMapper.toPedido(pedidoDTO);
-
         savePedido.setPrecioFinal(caclulaPrecioFinal(savePedido.getCantidadProducto(),bodega.getTipoBodega(), savePedido.getPrecioDeEnvio()));
         savePedido.setIdetentificacionVehiculo(generarPlacaVehiculo(bodega.getTipoBodega()));
         savePedido.setFechaDeCreacion(LocalDate.now());
@@ -76,8 +74,23 @@ public class PedidoServiceImpl implements IPedidoService {
 
     @Override
     public Pedido getPedido(Long id) {
-        return pedidoRepository.getReferenceById(id);
+        if (pedidoRepository.existsById(id)) {
+            return pedidoRepository.getReferenceById(id);
+        }else {
+            throw  new RuntimeException(MessageApplication.NOTFOUND);
+        }
     }
+
+    @Override
+    public Pedido findPedidoPorNumeroDeGuia(String numeroDeGuia) {
+        Pedido pedido= pedidoRepository.findByNumeroDeGuia(numeroDeGuia);
+        if (pedido == null) {
+            throw new RuntimeException(MessageApplication.NOTFOUND);
+        }
+        return pedidoRepository.findByNumeroDeGuia(numeroDeGuia);
+    }
+
+
 
 
     private String generarPlacaVehiculo(TipoBodega tipoBodega) {

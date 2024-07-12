@@ -7,4 +7,5 @@ public interface IPedidoService {
     Pedido createPedido(PedidoDTO pedidoDTO);
     Pedido getPedido(Long id);
 
+    Pedido findPedidoPorNumeroDeGuia(String numeroDeGuia);
 }

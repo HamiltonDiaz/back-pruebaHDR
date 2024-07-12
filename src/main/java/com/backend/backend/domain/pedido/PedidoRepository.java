@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface PedidoRepository extends JpaRepository<Pedido, Long> {
     Boolean existsByNumeroDeGuia(String secuenciaFinal);
+    Pedido findByNumeroDeGuia(String numeroDeGuia);
 }
