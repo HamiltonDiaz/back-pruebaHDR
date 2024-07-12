@@ -5,7 +5,7 @@ import com.backend.backend.domain.bodega.Bodega;
 import java.math.BigDecimal;
 
 
-public record RespuestaBodegaDTO(
+public record RespuestaBodegaPedidoDTO(
         Long id,
         String nombre,
         String direccion,
@@ -13,14 +13,10 @@ public record RespuestaBodegaDTO(
         String estado,
         String pais,
         String codigoPostal,
-        BigDecimal capacidadAlmacenamiento,
-        BigDecimal capacidadDisponible,
-        String responsable,
-        String telefonoContacto,
-        String emailContacto,
+
         String tipoBodega
 ) {
-    public RespuestaBodegaDTO(Bodega bodega) {
+    public RespuestaBodegaPedidoDTO(Bodega bodega) {
         this(
                 bodega.getId(),
                 bodega.getNombre(),
@@ -29,11 +25,6 @@ public record RespuestaBodegaDTO(
                 bodega.getEstado(),
                 bodega.getPais(),
                 bodega.getCodigoPostal(),
-                bodega.getCapacidadAlmacenamiento(),
-                bodega.getCapacidadDisponible(),
-                bodega.getResponsable(),
-                bodega.getTelefonoContacto(),
-                bodega.getEmailContacto(),
                 bodega.getTipoBodega().name()
         );
     }

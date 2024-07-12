@@ -8,7 +8,6 @@ public class PedidoMapper {
         return Pedido.builder()
                 .cantidadProducto(pedidoDTO.cantidadProducto())
                 .precioDeEnvio(pedidoDTO.precioDeEnvio())
-                .idetentificacionVehiculo(pedidoDTO.idetentificacionVehiculo())
                 .build();
     }
 }

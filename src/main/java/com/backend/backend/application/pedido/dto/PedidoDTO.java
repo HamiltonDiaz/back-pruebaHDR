@@ -1,8 +1,6 @@
 package com.backend.backend.application.pedido.dto;
 
-import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
-import org.hibernate.validator.constraints.Length;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
@@ -19,14 +17,13 @@ public record PedidoDTO(
             @NotNull
             BigInteger cantidadProducto,
 
-            String fechaDeEntrega,
+            LocalDate fechaDeEntrega,
 
             @NotNull
             BigDecimal precioDeEnvio,
 
-            @NotBlank
-            String idetentificacionVehiculo,
 
+            String idetentificacionVehiculo,
             String numeroDeguia,
             LocalDate fechaDeCreacion,
             LocalDate fechaDeModificacion
